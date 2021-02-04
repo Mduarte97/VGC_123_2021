@@ -47,10 +47,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, isGroundLayer);
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && Input.GetButton ("Vertical") && isGrounded)
         {
             rb.velocity = Vector2.zero;
             rb.AddForce(Vector2.up * jumpForce);
@@ -59,5 +60,11 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
         anim.SetFloat("speed", Mathf.Abs(horizontalInput));
         anim.SetBool("isGrounded", isGrounded);
+
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+        bool fire = Input.GetButtonDown("Fire1");
+        anim.SetBool("Fire", fire);
     }
+
 }
