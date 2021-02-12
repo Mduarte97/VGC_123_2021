@@ -88,7 +88,7 @@ TextureImporter:
     second: Sprite_Enemies_27
   - first:
       213: -75086078791266783
-    second: Sprite_Enemies_28
+    second: MarioPowerUp
   - first:
       213: 5637884585264908924
     second: Sprite_Enemies_29
@@ -2740,7 +2740,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_28
+      name: MarioPowerUp
       rect:
         serializedVersion: 2
         x: 153
